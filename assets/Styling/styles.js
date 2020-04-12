@@ -17,13 +17,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     homePageChild : {
-        padding : 15, 
         width : "100%",
     },
     bidCard : {
       flex : 1,
       justifyContent : "flex-start",
-      alignItems : "flex-start"
+      alignItems : "center",
+      flexDirection : "column",
+      borderColor : '#708090',
+      borderWidth : 2,
+      borderRadius : 11
     }
   });
 

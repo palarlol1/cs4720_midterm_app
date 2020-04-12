@@ -3,12 +3,12 @@ import { StyleSheet, Text, View, Alert, Dimensions } from 'react-native';
 import styles from '../assets/Styling/styles.js';
 import { Button } from 'react-native-elements';
 import Carousel from 'react-native-snap-carousel';
-import BidCard from './BidCard.js';
+import JobCard from './JobCard.js';
 
 
 
 
-export default class BidCarousel extends Component {
+export default class JobCarousel extends Component {
     constructor(props){
         super(props)
     }
@@ -17,20 +17,26 @@ export default class BidCarousel extends Component {
         return (
             <Carousel
             ref = {(c) => {this._carousel = c;}}
-            data = {this.props.bids}
+            data = {this.props.jobs}
             renderItem = {
                 ({item, index}) => {
                     return (
-                        <BidCard
-                            bid = {item.bid}
-                            name = {item.name}
-                            rating = {item.rating}
+                        <JobCard
+                            heading = {item.heading}
+                            description = {item.description}
+                            priceRange = {item.priceRange}
                         />
                     );
                 }
             }
             sliderWidth = {Dimensions.get('window').width}
             itemWidth = {Dimensions.get('window').width * .7}
+            onSnapToItem = {
+                (itemIndex) => {
+                    var key = this.props.jobs[itemIndex].key
+                    this.props.setBids(this.props.jobMap[key])
+                }
+            }
             />
         );
     }

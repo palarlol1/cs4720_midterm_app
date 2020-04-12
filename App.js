@@ -7,11 +7,14 @@ import styles from './assets/Styling/styles.js'
 //App Calls
 import LoginScreen from './screenComponents/LoginScreen.js'
 import HomePage from './screenComponents/HomeScreen'
+import BidCard from './appComponents/BidCard.js'
 
 
 
 
 export default function App(){
+
+
 
     //Hook to keep track of logging in
     const [token, setToken] = useState("")
