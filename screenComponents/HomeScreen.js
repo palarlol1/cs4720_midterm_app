@@ -6,19 +6,18 @@ import BidderQueue from '../appComponents/BidderQueue'
 import JobQueue from '../appComponents/JobQueue'
 
 
-export default function HomePage(){
+export default function HomePage({navigation}){
 
 
     //In the future, I'd like to have the bids and the jobs set up in firebase together.
     //For now, we'll simulate this with a JSON object
     var jobMap = {
-        "a" : [{name : "Tuy Roki", rating : 1.2, bid : 45}, {name : "Hal Ip", rating : 4.2, bid : 93}, {name : "Hut Pol", rating : 3.2, bid : 86}],
-        "b" : [{name : "Mi Fuj", rating : 1.72, bid : 41}, {name : "Pil Huy Ip", rating : 3.2, bid : 93}, {name : "Mer Jes", rating : 4.2, bid : 172}]
+        "a" : [{name : "Tuy Roki", rating : 1.2, bid : 4535}, {name : "Hal Ip", rating : 4.2, bid : 94753}, {name : "Hut Pol", rating : 3.2, bid : 84566}],
+        "b" : [{name : "Msdfgdgi Fsdfgsdfguj", rating : 1.72, bid : 41}, {name : "sdfgsdPil Hsdfguy Isdfgsp", rating : 3.2, bid : 93}, {name : "Msdfger Jdfghsdes", rating : 4.2, bid : 172}]
     }
 
     const [jobs, setJobs] = useState([{key : 'a', heading : "Install Stove", priceRange : [400, 540], description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet. Congue eu consequat ac felis donec et odio pellentesque diam. Tempus quam pellentesque nec nam aliquam sem et. Facilisis magna etiam tempor orci eu lobortis elementum. Risus quis varius quam quisque id diam vel quam elementum. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Eget lorem dolor sed viverra ipsum nunc. Aliquam ultrices sagittis orci a scelerisque purus. Id diam vel quam elementum pulvinar etiam non quam lacus."}, {heading : "Paint Fence", priceRange : [64, 193], description : "Have a pretty long fence I need to get painted, will send pictures if that helps!", key : 'b'}])
     const [bids, setBids] = useState(jobMap[jobs[0].key])
-
 
     function get_bids_view(bids){
         if (bids.length != 0){

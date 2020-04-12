@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Alert, Dimensions, ActivityIndicator, ScrollView } from 'react-native';
-import styles from '../assets/Styling/styles.js';
+import styles from '../../assets/Styling/styles.js';
 import { Button, Rating } from 'react-native-elements';
-import Image from './Image';
+import Image from '../Image';
 
 
 export default class JobCard extends Component{

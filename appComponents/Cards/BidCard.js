@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Alert, Dimensions, ActivityIndicator } from 'react-native';
-import styles from '../assets/Styling/styles.js';
+import styles from '../../assets/Styling/styles.js';
 import { Button, Rating } from 'react-native-elements';
-import Image from './Image';
+import Image from '../Image';
 
 export default class BidCard extends Component{
 
     constructor(props){
         super(props)
+        const { navigation } = this.props;
     }
 
     render(){
@@ -29,6 +30,11 @@ export default class BidCard extends Component{
                                 backgroundColor : "#23306E"
                             }}
                             title = {"See Profile"}
+                            onPress = {
+                                () => {
+                                    navigation.navigate('Profile')
+                                }
+                            }
                         />
                     </View>
                 </View>
